@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Navbar from './Navbar';
-import '../styles/layout.css';
+import '../styles/styles.css';
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -19,10 +19,8 @@ const Layout = ({ children }) => {
     return (
         <div className='container'>
             <Navbar siteTitle={data.site.siteMetadata.title} />
-            <div>
-                <main>{children}</main>
-                <footer>© Cole Johnson</footer>
-            </div>
+            <main>{children}</main>
+            <footer>© Cole Johnson</footer>
         </div>
     );
 };
