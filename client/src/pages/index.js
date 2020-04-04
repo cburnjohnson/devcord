@@ -94,17 +94,15 @@ const IndexPage = () => (
                     </p>
                 </div>
             </div>
-            <div id='chat-form'>
-                <form>
-                    <input
-                        type='text'
-                        name='message'
-                        id='message'
-                        placeholder='Enter message...'
-                    />
-                    <button type='submit'>Submit</button>
-                </form>
-            </div>
+            <form id='chat-form'>
+                <input
+                    type='text'
+                    name='messageText'
+                    id='messageText'
+                    placeholder='Enter message...'
+                />
+                <button type='submit'>Submit</button>
+            </form>
         </div>
     </Layout>
 );

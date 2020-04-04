@@ -87,6 +87,16 @@ main {
 #chat-form {
     grid-area: chatForm;
     background-color: #fff;
+    border-top: 1px solid var(--first);
+    border-bottom: 1px solid var(--first);
+}
+
+#messageText {
+    height: 100%;
+    width: 90%;
+    padding: 1rem;
+    max-height: 4vh;
+    border: none;
 }
 
 /* Footer */
