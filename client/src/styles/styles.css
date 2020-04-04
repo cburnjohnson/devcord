@@ -67,12 +67,20 @@ main {
 #chat-section {
     grid-area: chatSection;
     background-color: #432;
-    overflow-y: scroll;
-    max-height: 100%;
+    overflow-y: auto;
+    max-height: 70vh;
 }
 
 .message {
     padding: 1rem;
+    margin: 1rem auto;
+    width: 90%;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.message-details {
+    margin-bottom: 0.5rem;
 }
 
 /* Chat input/form */

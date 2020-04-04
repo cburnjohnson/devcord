@@ -21,6 +21,7 @@ const IndexPage = () => (
             </div>
             <div id='chat-section'>
                 <div className='message'>
+                    <p className='message-details'>Sent by User at 10:35 PM</p>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Expedita dicta soluta vero atque sint et itaque tempore?
