@@ -10,16 +10,21 @@ const IndexPage = () => (
         <SEO title='Home' />
         <div id='chat-container'>
             <div id='chat-list'>
-                <h2>Chatroom</h2>
-                <h3>JavaScript</h3>
-                <h2>Users in Room</h2>
-                <ul>
-                    <li>cole</li>
-                    <li>bob</li>
-                    <li>kam</li>
-                    <li>kurt</li>
-                    <li>ricky</li>
-                </ul>
+                <div id='room'>
+                    <h2>Chatroom</h2>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div id='room-users'>
+                    <h2>Users in Room</h2>
+                    <ul>
+                        <li>cole</li>
+                        <li>bob</li>
+                        <li>kam</li>
+                        <li>kurt</li>
+                        <li>ricky</li>
+                    </ul>
+                </div>
             </div>
             <div id='chat-section'>
                 <div className='message'>
