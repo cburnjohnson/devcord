@@ -10,6 +10,8 @@ const IndexPage = () => (
         <SEO title='Home' />
         <div id='chat-container'>
             <div id='chat-list'>
+                <h2>Chatroom</h2>
+                <h3>JavaScript</h3>
                 <h2>Users in Room</h2>
                 <ul>
                     <li>cole</li>
