@@ -5,8 +5,11 @@ const JoinRoom = () => {
     return (
         <Layout>
             <form className='joinroom-form'>
-                <label htmlFor='username'>Username</label>
-                <input type='text' id='username' />
+                <div className='form-control'>
+                    <label htmlFor='username'>Username</label>
+                    <input type='text' id='username' />
+                </div>
+
                 <select name='rooms' id='rooms'>
                     <option value='javascript'>JavaScript</option>
                     <option value='python'>Python</option>

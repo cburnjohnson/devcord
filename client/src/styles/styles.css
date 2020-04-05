@@ -186,6 +186,33 @@ button[type='submit']:hover {
     background-color: #0a531d;
 }
 
+/* Join Room */
+.joinroom-form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.joinroom-form label {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: var(--first);
+    font-weight: bold;
+}
+
+.joinroom-form input {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-control {
+    width: 100%;
+}
 /* Footer */
 
 footer {
