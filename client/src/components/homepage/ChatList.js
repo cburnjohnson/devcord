@@ -16,6 +16,13 @@ const ChatList = () => {
                     <li>kam</li>
                     <li>kurt</li>
                     <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
+                    <li>ricky</li>
                 </ul>
             </div>
         </div>
