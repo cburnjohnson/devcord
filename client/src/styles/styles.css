@@ -74,8 +74,8 @@ main {
 
 #room h3 {
     font-size: 2rem;
-    font-weight: normal;
     margin-top: 0.75rem;
+    text-transform: uppercase;
 }
 
 #room-users ul {
