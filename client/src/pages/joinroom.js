@@ -7,7 +7,11 @@ const JoinRoom = () => {
             <form className='joinroom-form'>
                 <div className='form-control'>
                     <label htmlFor='username'>Username</label>
-                    <input type='text' id='username' />
+                    <input
+                        type='text'
+                        id='username'
+                        placeholder='Enter room username...'
+                    />
                 </div>
 
                 <select name='rooms' id='rooms'>
