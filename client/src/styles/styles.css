@@ -145,7 +145,8 @@ main {
 }
 
 .message-details {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    color: var(--first);
 }
 
 /* Chat input/form */
