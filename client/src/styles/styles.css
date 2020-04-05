@@ -3,6 +3,7 @@
 /* Colors */
 :root {
     --first: #0b6623;
+    --background: #26262b;
 }
 
 * {
@@ -20,14 +21,13 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #999;
+    background-color: var(--background);
 }
 
 /* Navbar */
 
 nav {
     padding: 0.5rem 1rem;
-    background-color: var(--first);
 }
 
 .header {
@@ -37,7 +37,7 @@ nav {
 }
 
 .header h1 a {
-    color: #fff;
+    color: var(--first);
     text-decoration: none;
     font-size: 3rem;
     transition: 0.3s;
@@ -57,7 +57,7 @@ nav {
 
 .header ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--first);
     transition: 0.3s;
 }
 
@@ -90,7 +90,7 @@ main {
 
 #chat-list {
     grid-area: chatList;
-    background-color: #888;
+    background-color: #2f2f35;
     overflow-y: auto;
     display: flex;
     justify-content: space-around;
@@ -100,12 +100,14 @@ main {
 
 #chat-list h2 {
     font-size: 2rem;
+    color: var(--first);
 }
 
 #room h3 {
     font-size: 2rem;
     margin-top: 0.75rem;
     text-transform: uppercase;
+    color: #fff;
 }
 
 #room-users ul {
@@ -114,12 +116,13 @@ main {
     grid-template-columns: 50% 50%;
     margin-top: 0.75rem;
     font-size: 1.2rem;
+    color: #fff;
 }
 
 /* Chat Board/Section */
 #chat-section {
     grid-area: chatSection;
-    background-color: #888;
+    background-color: var(--background);
     overflow-y: auto;
     max-height: 70vh;
 }
@@ -151,8 +154,8 @@ main {
     max-height: 5vh;
     border: none;
     flex: 4;
-    border-top: 1px solid var(--first);
-    border-bottom: 1px solid var(--first);
+    border-top: 1px solid var(--background);
+    border-bottom: 1px solid var(--background);
     outline: none;
 }
 
@@ -165,6 +168,8 @@ button[type='submit'] {
     color: #fff;
     cursor: pointer;
     transition: 0.3s;
+    border-top: 1px solid var(--background);
+    border-bottom: 1px solid var(--background);
 }
 
 button[type='submit']:hover {
@@ -175,6 +180,5 @@ button[type='submit']:hover {
 
 footer {
     padding: 0.5rem;
-    background-color: var(--first);
-    color: #fff;
+    color: var(--first);
 }
