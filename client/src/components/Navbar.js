@@ -8,6 +8,11 @@ const Navbar = ({ siteTitle }) => (
             <h1>
                 <Link>{siteTitle}</Link>
             </h1>
+            <ul>
+                <li>
+                    <Link>Leave Room</Link>
+                </li>
+            </ul>
         </div>
     </nav>
 );
