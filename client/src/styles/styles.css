@@ -104,6 +104,10 @@ main {
     color: var(--first);
 }
 
+#room {
+    width: 50%;
+}
+
 #room h3 {
     font-size: 2rem;
     margin-top: 0.75rem;
@@ -111,10 +115,14 @@ main {
     color: #fff;
 }
 
+#room-users {
+    width: 50%;
+}
+
 #room-users ul {
     list-style-type: none;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
     margin-top: 0.75rem;
     font-size: 1.2rem;
     color: #fff;
