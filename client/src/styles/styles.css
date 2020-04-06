@@ -100,6 +100,7 @@ main {
     text-align: center;
     max-height: 100%;
     border-bottom: 1px solid var(--first);
+    overflow-x: hidden;
 }
 
 #chat-list h2 {
@@ -125,7 +126,7 @@ main {
 #room-users ul {
     list-style-type: none;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(2, 50%);
     margin-top: 0.75rem;
     font-size: 1.2rem;
     color: #fff;
@@ -280,5 +281,17 @@ footer {
 
     #chat-section {
         max-height: 95vh;
+    }
+
+    #chat-list h2 {
+        font-size: 2.7rem;
+    }
+
+    #room h3 {
+        font-size: 2.7rem;
+    }
+
+    #room-users ul {
+        font-size: 1.25rem;
     }
 }

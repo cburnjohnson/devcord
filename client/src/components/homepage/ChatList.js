@@ -23,6 +23,8 @@ const ChatList = () => {
                     <li>ricky</li>
                     <li>ricky</li>
                     <li>ricky</li>
+                    <li>rickkkkkkkkkkkkkky</li>
+                    <li>rickkkkkkkkkkkkkkkkkkkkkkky</li>
                 </ul>
             </div>
         </div>
