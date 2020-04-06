@@ -46,7 +46,7 @@ nav {
 }
 
 .header h1 a:hover {
-    color: #d4d4d4;
+    color: #0d7729;
 }
 
 .header ul {
@@ -65,7 +65,7 @@ nav {
 
 .header ul li a:hover {
     text-decoration: none;
-    color: #d4d4d4;
+    color: #0d7729;
 }
 
 /* Main / Chat Container */
@@ -156,14 +156,13 @@ main {
 
 .message-details {
     margin-bottom: 0.35rem;
-    color: var(--first);
+    color: #0d7729;
 }
 
 /* Chat input/form */
 #chat-form {
     grid-area: chatForm;
     background-color: #fff;
-
     display: flex;
 }
 
@@ -176,6 +175,7 @@ main {
     flex: 4;
     border-top: 1px solid var(--background);
     border-bottom: 1px solid var(--background);
+    font-size: 1.25rem;
 }
 
 button[type='submit'] {
@@ -189,6 +189,7 @@ button[type='submit'] {
     transition: 0.3s;
     border-top: 1px solid var(--background);
     border-bottom: 1px solid var(--background);
+    font-size: 1.25rem;
 }
 
 button[type='submit']:hover {

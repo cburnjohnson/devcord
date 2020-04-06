@@ -9,7 +9,7 @@ const ChatForm = () => {
                 id='messageText'
                 placeholder='Enter message...'
             />
-            <button type='submit'>Submit</button>
+            <button type='submit'>Send</button>
         </form>
     );
 };
