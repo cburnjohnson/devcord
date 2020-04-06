@@ -294,4 +294,20 @@ footer {
     #room-users ul {
         font-size: 1.25rem;
     }
+
+    /* Join room */
+
+    .joinroom-form label {
+        width: 50%;
+        margin-bottom: 0.1rem;
+    }
+
+    .joinroom-form input {
+        width: 50%;
+        font-size: 1.25rem;
+    }
+
+    .joinroom-form select {
+        width: 50%;
+    }
 }
