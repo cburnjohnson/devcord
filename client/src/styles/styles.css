@@ -167,7 +167,6 @@ main {
     flex: 4;
     border-top: 1px solid var(--background);
     border-bottom: 1px solid var(--background);
-    outline: none;
 }
 
 button[type='submit'] {
@@ -236,4 +235,33 @@ button[type='submit']:hover {
 footer {
     padding: 0.5rem;
     color: var(--first);
+}
+
+/* Media Queries */
+@media screen and (min-width: 1000px) {
+    #chat-container {
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 95% 5%;
+        grid-template-areas:
+            'chatList chatSection'
+            'chatList chatForm';
+    }
+
+    #chat-list {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #room {
+        width: 100%;
+    }
+
+    #room-users {
+        width: 100%;
+    }
+
+    #chat-section {
+        max-height: 95vh;
+    }
 }
