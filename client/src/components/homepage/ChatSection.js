@@ -70,6 +70,12 @@ const ChatSection = () => {
                     Assumenda voluptatibus perspiciatis labore possimus soluta?
                 </p>
             </div>
+            <div className='message'>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error, mollitia?
+                </p>
+            </div>
         </div>
     );
 };

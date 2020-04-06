@@ -137,14 +137,21 @@ main {
     background-color: #2f2f35;
     overflow-y: auto;
     max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
 }
 
 .message {
     padding: 1rem;
-    margin: 1rem auto;
-    width: 90%;
+    margin: 1rem 0;
     border-radius: 15px;
     background-color: #fff;
+}
+
+.message:first-child {
+    margin-top: 0;
 }
 
 .message-details {
