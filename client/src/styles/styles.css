@@ -216,8 +216,19 @@ button[type='submit']:hover {
     font-size: 1.25rem;
 }
 
+.joinroom-form select {
+    width: 80%;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
 .form-control {
     width: 100%;
+    margin-top: 1.5rem;
 }
 /* Footer */
 
