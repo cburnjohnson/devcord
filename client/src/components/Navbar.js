@@ -10,7 +10,7 @@ const Navbar = ({ siteTitle }) => (
             </h1>
             <ul>
                 <li>
-                    <Link>Leave Room</Link>
+                    <Link activeClassName='active-page'>Leave Room</Link>
                 </li>
             </ul>
         </div>

@@ -248,6 +248,10 @@ footer {
     color: var(--first);
 }
 
+.active-page {
+    display: none;
+}
+
 /* Media Queries */
 @media screen and (min-width: 1000px) {
     #chat-container {
