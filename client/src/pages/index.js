@@ -8,14 +8,27 @@ import ChatSection from '../components/homepage/ChatSection';
 import ChatForm from '../components/homepage/ChatForm';
 
 const IndexPage = () => {
-    const [endpoint, setEndpoint] = useState('http://localhost:5000');
+    const [messages, setMessages] = useState([]);
 
-    const socket = io(endpoint);
-
+    let socket;
     useEffect(() => {
-        socket.on('connection', data => console.log('connected'));
-        socket.emit('connection');
+        socket = io('http://localhost:5000');
+        socket.on('message', message => {
+            setMessages([message, ...messages]);
+        });
     });
+
+    const sendMessage = (e, body) => {
+        e.preventDefault();
+        console.log(e);
+        let message = {
+            body,
+            from: 'Me'
+        };
+        console.log(message);
+        setMessages([message, ...messages]);
+        socket.emit('message', message);
+    };
 
     return (
         <Layout>
@@ -23,7 +36,7 @@ const IndexPage = () => {
             <div id='chat-container'>
                 <ChatList />
                 <ChatSection />
-                <ChatForm />
+                <ChatForm sendMessage={sendMessage} />
             </div>
         </Layout>
     );

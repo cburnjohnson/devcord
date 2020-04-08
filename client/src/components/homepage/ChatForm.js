@@ -1,8 +1,14 @@
 import React from 'react';
 
-const ChatForm = () => {
+const ChatForm = ({ sendMessage }) => {
     return (
-        <form id='chat-form'>
+        <form
+            id='chat-form'
+            onSubmit={e => {
+                const body = document.getElementById('messageText').value;
+                sendMessage(e, body);
+            }}
+        >
             <input
                 type='text'
                 name='messageText'
