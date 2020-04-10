@@ -10,9 +10,8 @@ import ChatForm from '../components/homepage/ChatForm';
 const IndexPage = () => {
     const [messages, setMessages] = useState([]);
 
-    let socket;
+    const socket = io('http://localhost:5000');
     useEffect(() => {
-        socket = io('http://localhost:5000');
         socket.on('message', message => {
             setMessages([message, ...messages]);
         });
