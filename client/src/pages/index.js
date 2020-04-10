@@ -22,13 +22,13 @@ const IndexPage = ({ location }) => {
         socket.on('message', message => {
             setMessages([message, ...messages]);
         });
-    });
+    }, []);
 
     const sendMessage = (e, body) => {
         e.preventDefault();
         let message = {
             body,
-            from: user.username
+            username: user.username
         };
         setMessages([message, ...messages]);
         socket.emit('message', message);

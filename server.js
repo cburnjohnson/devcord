@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const http = require('http').createServer();
 const io = require('socket.io')(http);
-
+const formatMessage = require('./utils/messages');
 const { userJoin } = require('./utils/users');
 
 // set static folder
@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
     );
 }
+const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
     console.log('connected1');
@@ -21,6 +22,12 @@ io.on('connection', (socket) => {
     socket.on('joinRoom', ({ username, room }) => {
         const user = userJoin(socket.id, username, room);
         console.log(user);
+
+        socket.join(user.room);
+
+        // Welcome current user
+        socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
+        console.log(formatMessage(botName, 'Welcome to DevCord!'));
     });
 
     socket.on('message', (message) => {
