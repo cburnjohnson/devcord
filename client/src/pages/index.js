@@ -20,6 +20,7 @@ const IndexPage = ({ location }) => {
         socket.emit('joinRoom', { username, room });
 
         socket.on('message', message => {
+            console.log('here');
             setMessages([message, ...messages]);
         });
     }, []);
@@ -30,7 +31,6 @@ const IndexPage = ({ location }) => {
             body,
             username: user.username
         };
-        setMessages([message, ...messages]);
         socket.emit('message', message);
     };
 

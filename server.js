@@ -27,11 +27,9 @@ io.on('connection', (socket) => {
 
         // Welcome current user
         socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
-        console.log(formatMessage(botName, 'Welcome to DevCord!'));
     });
 
     socket.on('message', (message) => {
-        console.log('here');
         socket.broadcast.emit('message', message);
     });
 });
