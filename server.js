@@ -14,7 +14,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 io.on('connection', (socket) => {
+    console.log('connected1');
     socket.on('message', (message) => {
+        console.log('here');
         socket.broadcast.emit('message', message);
     });
 });

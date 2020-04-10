@@ -34,7 +34,7 @@ const IndexPage = () => {
             <SEO title='Home' />
             <div id='chat-container'>
                 <ChatList />
-                <ChatSection />
+                <ChatSection messages={messages} />
                 <ChatForm sendMessage={sendMessage} />
             </div>
         </Layout>
