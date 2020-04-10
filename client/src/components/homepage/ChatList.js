@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ChatList = () => {
+const ChatList = ({ room }) => {
     return (
         <div id='chat-list'>
             <div id='room'>
                 <h2>Chatroom</h2>
-                <h3>JavaScript</h3>
+                <h3>{room}</h3>
             </div>
 
             <div id='room-users'>
