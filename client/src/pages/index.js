@@ -21,6 +21,8 @@ const IndexPage = ({ location }) => {
 
         socket.on('message', message => {
             console.log('here');
+            console.log(message);
+            console.log(messages);
             setMessages([message, ...messages]);
         });
     }, []);

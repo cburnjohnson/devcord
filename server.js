@@ -21,7 +21,6 @@ io.on('connection', (socket) => {
 
     socket.on('joinRoom', ({ username, room }) => {
         const user = userJoin(socket.id, username, room);
-        console.log(user);
 
         socket.join(user.room);
 
@@ -29,8 +28,8 @@ io.on('connection', (socket) => {
         socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
     });
 
-    socket.on('message', (message) => {
-        socket.broadcast.emit('message', message);
+    socket.on('message', ({ username, body }) => {
+        socket.broadcast.emit('message', formatMessage(username, body));
     });
 });
 
