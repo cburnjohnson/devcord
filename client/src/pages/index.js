@@ -7,7 +7,8 @@ import ChatList from '../components/homepage/ChatList';
 import ChatSection from '../components/homepage/ChatSection';
 import ChatForm from '../components/homepage/ChatForm';
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
+    const { user } = location.state;
     const [messages, setMessages] = useState([]);
 
     const socket = io('http://localhost:5000');
@@ -22,7 +23,7 @@ const IndexPage = () => {
         console.log(e);
         let message = {
             body,
-            from: 'Me'
+            from: user.username
         };
         console.log(message);
         setMessages([message, ...messages]);
