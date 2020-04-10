@@ -8,6 +8,9 @@ import ChatSection from '../components/homepage/ChatSection';
 import ChatForm from '../components/homepage/ChatForm';
 
 const IndexPage = ({ location }) => {
+    if (location.state === null) {
+        window.location = '/joinroom';
+    }
     const { user } = location.state;
     const [messages, setMessages] = useState([]);
 
