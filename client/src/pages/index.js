@@ -12,10 +12,13 @@ const IndexPage = ({ location }) => {
         window.location = '/joinroom';
     }
     const { user } = location.state;
+    const { username, room } = user;
     const [messages, setMessages] = useState([]);
 
     const socket = io('http://localhost:5000');
     useEffect(() => {
+        socket.emit('joinRoom', { username, room });
+
         socket.on('message', message => {
             setMessages([message, ...messages]);
         });

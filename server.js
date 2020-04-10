@@ -4,6 +4,8 @@ const path = require('path');
 const http = require('http').createServer();
 const io = require('socket.io')(http);
 
+const { userJoin } = require('./utils/users');
+
 // set static folder
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/public'));
@@ -15,6 +17,12 @@ if (process.env.NODE_ENV === 'production') {
 
 io.on('connection', (socket) => {
     console.log('connected1');
+
+    socket.on('joinRoom', ({ username, room }) => {
+        const user = userJoin(socket.id, username, room);
+        console.log(user);
+    });
+
     socket.on('message', (message) => {
         console.log('here');
         socket.broadcast.emit('message', message);
