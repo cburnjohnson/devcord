@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const JoinRoom = () => {
     const [user, setUser] = useState({
         username: '',
-        room: ''
+        room: 'javascript'
     });
 
     const onSubmit = e => {
