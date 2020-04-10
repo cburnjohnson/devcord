@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react';
+import { GlobalProvider } from './src/context/GlobalState';
+const wrapRootElement = ({ element }) => (
+    <GlobalProvider>{element}</GlobalProvider>
+);
 
-// You can delete this file if you're not using it
+export { wrapRootElement };

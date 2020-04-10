@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import io from 'socket.io-client';
 
 import Layout from '../components/layout';
@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import ChatList from '../components/homepage/ChatList';
 import ChatSection from '../components/homepage/ChatSection';
 import ChatForm from '../components/homepage/ChatForm';
+import { GlobalContext } from '../context/GlobalState';
 
 const IndexPage = ({ location }) => {
     if (location.state === null) {
@@ -13,14 +14,15 @@ const IndexPage = ({ location }) => {
     }
     const { user } = location.state;
     const { username, room } = user;
-    const [messages, setMessages] = useState([]);
+
+    const { messages, addMessage } = useContext(GlobalContext);
 
     const socket = io('http://localhost:5000');
     useEffect(() => {
         socket.emit('joinRoom', { username, room });
 
         socket.on('message', message => {
-            setMessages([message, ...messages]);
+            addMessage(message);
         });
     }, []);
 
