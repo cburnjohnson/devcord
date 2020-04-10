@@ -23,12 +23,10 @@ const IndexPage = ({ location }) => {
 
     const sendMessage = (e, body) => {
         e.preventDefault();
-        console.log(e);
         let message = {
             body,
             from: user.username
         };
-        console.log(message);
         setMessages([message, ...messages]);
         socket.emit('message', message);
     };
