@@ -8,13 +8,9 @@ const JoinRoom = () => {
         room: 'javascript'
     });
 
-    const onSubmit = e => {
-        e.preventDefault();
-    };
-
     return (
         <Layout>
-            <form className='joinroom-form' onSubmit={onSubmit}>
+            <form className='joinroom-form'>
                 <div className='form-control'>
                     <label htmlFor='username'>Username</label>
                     <input
@@ -24,6 +20,7 @@ const JoinRoom = () => {
                         onChange={e =>
                             setUser({ ...user, username: e.target.value })
                         }
+                        required
                     />
                 </div>
 
