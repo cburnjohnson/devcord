@@ -14,9 +14,13 @@ export const GlobalProvider = ({ children }) => {
         dispatch({ type: 'ADD_MESSAGE', payload: message });
     }
 
+    function logout() {
+        dispatch({ type: 'LOGOUT' });
+    }
+
     return (
         <GlobalContext.Provider
-            value={{ messages: state.messages, addMessage }}
+            value={{ messages: state.messages, addMessage, logout }}
         >
             {children}
         </GlobalContext.Provider>

@@ -5,6 +5,11 @@ export default (state, action) => {
                 ...state,
                 messages: [action.payload, ...state.messages]
             };
+        case 'LOGOUT':
+            return {
+                ...state,
+                messages: []
+            };
         default:
             return state;
     }
