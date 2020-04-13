@@ -4,7 +4,7 @@ const path = require('path');
 const http = require('http').createServer();
 const io = require('socket.io')(http);
 const formatMessage = require('./utils/messages');
-const { userJoin } = require('./utils/users');
+const { userJoin, userLeave } = require('./utils/users');
 
 // set static folder
 if (process.env.NODE_ENV === 'production') {
@@ -30,6 +30,18 @@ io.on('connection', (socket) => {
 
     socket.on('message', ({ username, body }) => {
         socket.broadcast.emit('message', formatMessage(username, body));
+    });
+
+    // Runs when client disconnects
+    socket.on('disconnect', () => {
+        const user = userLeave(socket.id);
+
+        if (user) {
+            io.to(user.room).emit(
+                'message',
+                formatMessage(botName, `${user.username} has left the chat`)
+            );
+        }
     });
 });
 
