@@ -4,7 +4,7 @@ const path = require('path');
 const http = require('http').createServer();
 const io = require('socket.io')(http);
 const formatMessage = require('./utils/messages');
-const { userJoin, userLeave } = require('./utils/users');
+const { userJoin, userLeave, getCurrentUser } = require('./utils/users');
 
 // set static folder
 if (process.env.NODE_ENV === 'production') {
@@ -24,10 +24,19 @@ io.on('connection', (socket) => {
 
         // Welcome current user
         socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
+
+        io.to(user.room).emit(
+            'message',
+            formatMessage(botName, `${user.username} has joined the chat`)
+        );
     });
 
-    socket.on('message', ({ username, body }) => {
-        socket.broadcast.emit('message', formatMessage(username, body));
+    socket.on('message', (msg) => {
+        const user = getCurrentUser(socket.id);
+
+        if (user) {
+            io.to(user.room).emit('message', formatMessage(user.username, msg));
+        }
     });
 
     // Runs when client disconnects

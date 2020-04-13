@@ -16,7 +16,12 @@ function userLeave(id) {
     }
 }
 
+function getCurrentUser(id) {
+    return users.find((user) => user.id === id);
+}
+
 module.exports = {
     userJoin,
     userLeave,
+    getCurrentUser,
 };
