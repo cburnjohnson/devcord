@@ -41,7 +41,7 @@ const JoinRoom = () => {
                     </select>
                 </div>
 
-                <Link to='/' state={{ user }}>
+                <Link to='/' state={{ user }} id='joinRoom'>
                     Join Room
                 </Link>
             </form>
