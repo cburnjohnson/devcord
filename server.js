@@ -17,8 +17,6 @@ if (process.env.NODE_ENV === 'production') {
 const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
-    console.log('connected1');
-
     socket.on('joinRoom', ({ username, room }) => {
         const user = userJoin(socket.id, username, room);
 
