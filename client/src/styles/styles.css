@@ -277,48 +277,15 @@ footer {
 /* Media Queries */
 @media screen and (min-width: 1000px) {
     #chat-container {
-        grid-template-columns: 25% 75%;
+        grid-template-columns: 1fr;
         grid-template-rows: 95% 5%;
         grid-template-areas:
-            'chatList chatSection'
-            'chatList chatForm';
-    }
-
-    #chat-list {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-right: 1px solid var(--first);
-    }
-
-    #room {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #room-users {
-        width: 100%;
-        align-self: flex-start;
-        height: 50%;
+            'chatSection'
+            'chatForm';
     }
 
     #chat-section {
         max-height: 95vh;
-    }
-
-    #chat-list h2 {
-        font-size: 2.7rem;
-    }
-
-    #room h3 {
-        font-size: 2.7rem;
-    }
-
-    #room-users ul {
-        font-size: 1.25rem;
     }
 
     /* Join room */

@@ -39,7 +39,6 @@ const IndexPage = ({ location }) => {
         <Layout>
             <SEO title='Home' />
             <div id='chat-container'>
-                <ChatList room={user.room} />
                 <ChatSection messages={messages} />
                 <ChatForm sendMessage={sendMessage} />
             </div>
