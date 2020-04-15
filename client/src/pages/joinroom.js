@@ -24,23 +24,6 @@ const JoinRoom = () => {
                     />
                 </div>
 
-                <div className='form-control'>
-                    <label htmlFor='rooms'>Available rooms to join</label>
-                    <select
-                        name='rooms'
-                        id='rooms'
-                        onBlur={e => setUser({ ...user, room: e.target.value })}
-                    >
-                        <option value='javascript'>JavaScript</option>
-                        <option value='python'>Python</option>
-                        <option value='c#'>C#</option>
-                        <option value='java'>Java</option>
-                        <option value='php'>PHP</option>
-                        <option value='ruby'>Ruby</option>
-                        <option value='c'>C</option>
-                    </select>
-                </div>
-
                 <Link to='/' state={{ user }} id='joinRoom'>
                     Join Room
                 </Link>
