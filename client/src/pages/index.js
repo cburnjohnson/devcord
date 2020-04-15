@@ -3,7 +3,6 @@ import io from 'socket.io-client';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import ChatList from '../components/homepage/ChatList';
 import ChatSection from '../components/homepage/ChatSection';
 import ChatForm from '../components/homepage/ChatForm';
 import { GlobalContext } from '../context/GlobalState';
