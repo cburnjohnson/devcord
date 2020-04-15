@@ -12,13 +12,13 @@ const IndexPage = ({ location }) => {
         window.location = '/joinroom';
     }
     const { user } = location.state;
-    const { username, room } = user;
+    const { username } = user;
 
     const { messages, addMessage } = useContext(GlobalContext);
 
     const socket = io('http://localhost:5000');
     useEffect(() => {
-        socket.emit('joinRoom', { username, room });
+        socket.emit('joinRoom', { username });
 
         socket.on('message', message => {
             addMessage(message);

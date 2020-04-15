@@ -1,7 +1,7 @@
 const users = [];
 
-function userJoin(id, username, room) {
-    const user = { id, username, room };
+function userJoin(id, username) {
+    const user = { id, username };
 
     users.push(user);
 
@@ -17,6 +17,7 @@ function userLeave(id) {
 }
 
 function getCurrentUser(id) {
+    console.log(users);
     return users.find((user) => user.id === id);
 }
 

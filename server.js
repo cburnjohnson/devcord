@@ -17,26 +17,21 @@ if (process.env.NODE_ENV === 'production') {
 const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
-    socket.on('joinRoom', ({ username, room }) => {
-        const user = userJoin(socket.id, username, room);
-
-        socket.join(user.room);
+    socket.on('joinRoom', ({ username }) => {
+        const user = userJoin(socket.id, username);
 
         // Welcome current user
         socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
 
-        io.to(user.room).emit(
+        io.sockets.emit(
             'message',
             formatMessage(botName, `${user.username} has joined the chat`)
         );
     });
 
     socket.on('message', (msg) => {
-        const user = getCurrentUser(socket.id);
-
-        if (user) {
-            io.to(user.room).emit('message', formatMessage(user.username, msg));
-        }
+        console.log(msg);
+        io.sockets.emit('message', formatMessage(msg));
     });
 
     // Runs when client disconnects
@@ -44,7 +39,7 @@ io.on('connection', (socket) => {
         const user = userLeave(socket.id);
 
         if (user) {
-            io.to(user.room).emit(
+            io.sockets.emit(
                 'message',
                 formatMessage(botName, `${user.username} has left the chat`)
             );
