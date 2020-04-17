@@ -19,13 +19,18 @@ const botName = 'DevCord Bot';
 io.on('connection', (socket) => {
     socket.on('joinRoom', ({ username }) => {
         const user = userJoin(socket.id, username);
-
         // Welcome current user
-        socket.emit('message', formatMessage(botName, 'Welcome to DevCord!'));
+        socket.emit(
+            'message',
+            formatMessage({ username: botName, body: 'Welcome to DevCord!' })
+        );
 
         io.sockets.emit(
             'message',
-            formatMessage(botName, `${user.username} has joined the chat`)
+            formatMessage({
+                username: botName,
+                body: `${username} has joined the chat`,
+            })
         );
     });
 
@@ -41,7 +46,10 @@ io.on('connection', (socket) => {
         if (user) {
             io.sockets.emit(
                 'message',
-                formatMessage(botName, `${user.username} has left the chat`)
+                formatMessage({
+                    username: botName,
+                    body: `${user.username} has left the chat`,
+                })
             );
         }
     });
