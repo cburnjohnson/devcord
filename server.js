@@ -6,14 +6,6 @@ const io = require('socket.io')(http);
 const formatMessage = require('./utils/messages');
 const { userJoin, userLeave, getCurrentUser } = require('./utils/users');
 
-// set static folder
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/public'));
-
-    app.get('*', (req, res) =>
-        res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
-    );
-}
 const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
