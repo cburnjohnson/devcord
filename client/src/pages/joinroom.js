@@ -10,7 +10,7 @@ const JoinRoom = () => {
 
     return (
         <Layout>
-            <form className='joinroom-form'>
+            <form className='joinroom-form' onSubmit={e => e.preventDefault()}>
                 <div className='form-control'>
                     <label htmlFor='username'>Username</label>
                     <input
