@@ -38,15 +38,11 @@ nav {
     align-items: center;
 }
 
-.header h1 a {
+.header h1 {
     color: var(--first);
     text-decoration: none;
     font-size: 3rem;
     transition: 0.3s;
-}
-
-.header h1 a:hover {
-    color: #0d7729;
 }
 
 .header ul {
@@ -65,7 +61,7 @@ nav {
 
 .header ul li a:hover {
     text-decoration: none;
-    color: #0d7729;
+    color: #10862f;
 }
 
 /* Main / Chat Container */
