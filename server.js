@@ -18,7 +18,6 @@ const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
     socket.on('joinRoom', ({ username }) => {
-        const user = userJoin(socket.id, username);
         // Welcome current user
         socket.emit(
             'message',
@@ -35,7 +34,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('message', (msg) => {
-        console.log(msg);
         io.sockets.emit('message', formatMessage(msg));
     });
 
