@@ -11,7 +11,7 @@ const IndexPage = ({ location }) => {
     if (location.state === null) {
         window.location = '/joinroom';
     }
-    const { user } = location.state;
+    const { user } = location.state || { user: '' };
     const { username } = user;
 
     const { messages, addMessage } = useContext(GlobalContext);
