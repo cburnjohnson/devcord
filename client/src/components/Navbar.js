@@ -9,9 +9,7 @@ const Navbar = ({ siteTitle }) => {
     return (
         <nav className='nav'>
             <div className='header'>
-                <h1>
-                    <Link to='/'>{siteTitle}</Link>
-                </h1>
+                <h1>{siteTitle}</h1>
                 <ul>
                     <li>
                         <Link
