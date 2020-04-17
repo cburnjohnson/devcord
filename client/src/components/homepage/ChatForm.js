@@ -7,6 +7,8 @@ const ChatForm = ({ sendMessage }) => {
             onSubmit={e => {
                 const body = document.getElementById('messageText').value;
                 sendMessage(e, body);
+                document.getElementById('messageText').value = '';
+                document.getElementById('messageText').focus();
             }}
         >
             <input
