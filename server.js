@@ -8,14 +8,6 @@ const { userJoin, userLeave, getCurrentUser } = require('./utils/users');
 
 const botName = 'DevCord Bot';
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/public'));
-
-    app.get('*', (req, res) =>
-        res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
-    );
-}
-
 io.on('connection', (socket) => {
     socket.on('joinRoom', ({ username }) => {
         // Welcome current user
