@@ -10,7 +10,6 @@ const botName = 'DevCord Bot';
 
 io.on('connection', (socket) => {
     socket.on('joinRoom', ({ username }) => {
-        // Welcome current user
         socket.emit(
             'message',
             formatMessage({ username: botName, body: 'Welcome to DevCord!' })
